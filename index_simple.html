@@ -3,41 +3,15 @@
 
 <head>
     <meta charset="utf-8">
-    <!-- <meta name="google" value="notranslate"> -->
     <title>Blockly Demo: Fixed Blockly</title>
     <link href="https://cdn.bootcss.com/mui/3.7.1/css/mui.min.css" rel="stylesheet">
-    <!-- <script src="https://cdn.bootcss.com/mui/3.7.1/js/mui.min.js"></script> -->
+    <script src="https://cdn.bootcss.com/mui/3.7.1/js/mui.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="blockly_compressed.js"></script>
     <script src="blocks_compressed.js"></script>
     <script src="javascript_compressed.js"></script>
     <script src="custom.js"></script>
     <script src="en.js"></script>
-    <style>
-        body,
-        html {
-            background-color: #b6b4b4;
-            font-family: sans-serif;
-            width: 99%;
-            height: 98%
-        }
-        
-        h1 {
-            font-weight: 400;
-            font-size: 140%
-        }
-        
-        #circle {
-            height: 300px;
-            width: 300px;
-            border-radius: 50%;
-            background-color: white;
-            border: solid 1px black;
-            position: absolute;
-            left: 1000px;
-            top: 110px;
-        }
-    </style>
 </head>
 
 <body>
@@ -45,7 +19,10 @@
         <button onclick="showCode()" class="mui-btn mui-btn-royal">Show JavaScript</button>
         <button onclick="runCode()" class="mui-btn mui-btn-royal">Run JavaScript</button>
     </div>
+
     <div id="blocklyDiv" style="height:90%;width:50%"></div>
+
+    <div id="circle"></div>
 
     <xml id="toolbox" style="display: none">
         <category name="logic">
@@ -66,7 +43,6 @@
         </category>
     </xml>
 
-    <div id="circle"></div>
 
     <script>
         function showCode() {
