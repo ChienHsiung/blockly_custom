@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <title>Blockly Demo: Fixed Blockly</title>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/mui/3.7.1/css/mui.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.bootcss.com/mui/3.7.1/css/mui.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/mui/3.7.1/js/mui.min.js"></script>
+    <link rel="stylesheet" href="style.css">
     <script src="blockly_compressed.js"></script>
     <script src="blocks_compressed.js"></script>
     <script src="javascript_compressed.js"></script>
@@ -15,16 +15,15 @@
 </head>
 
 <body>
-    <!-- 按鈕 -->
     <div style="margin: 5px;">
         <button onclick="showCode()" class="mui-btn mui-btn-royal">Show JavaScript</button>
         <button onclick="runCode()" class="mui-btn mui-btn-royal">Run JavaScript</button>
     </div>
-    <!-- 畫布 -->
+
     <div id="blocklyDiv" style="height:90%;width:50%"></div>
-    <!-- 網頁 -->
+
     <div id="circle"></div>
-    <!-- 選單 -->
+
     <xml id="toolbox" style="display: none">
         <category name="logic">
             <block type="lightswitch">
@@ -43,12 +42,9 @@
             <block type="hsiung"></block>
         </category>
     </xml>
-    <script>
-        var demoWorkspace = Blockly.inject("blocklyDiv", {
-            media: "media/",
-            toolbox: document.getElementById("toolbox")
-        })
 
+
+    <script>
         function showCode() {
             Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
             var o = Blockly.JavaScript.workspaceToCode(demoWorkspace);
@@ -66,6 +62,10 @@
                 alert(o)
             }
         }
+        var demoWorkspace = Blockly.inject("blocklyDiv", {
+            media: "media/",
+            toolbox: document.getElementById("toolbox")
+        })
     </script>
 </body>
 
